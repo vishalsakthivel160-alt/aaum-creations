@@ -14,6 +14,7 @@ import ChatMessage from './ChatMessage';
 import QuickPrompts from './QuickPrompts';
 import WhatsAppButton from './WhatsAppButton';
 import businessKnowledge from '../data/businessKnowledge.json';
+import { COURIER_ORDER_MESSAGE } from '../utils/orderConstants';
 
 const INITIAL_WELCOME_MESSAGE = {
   id: 'welcome-0',
@@ -339,7 +340,7 @@ export default function ChatWidget({ isOpen, setIsOpen, initialMessagePrompt, on
             <span>Direct Courier Order via WhatsApp:</span>
             <WhatsAppButton
               variant="pill"
-              customMessage="Hello Aaum Creations! 🌿\nI would like to order authentic Shadow-Dried Soursop Leaves via direct Courier delivery.\n\n• Name: \n• Quantity (Packs): \n• Delivery Address: \n• Pincode: \n• Phone: \n\nPlease share payment details (UPI/GPay) to confirm my order!"
+              customMessage={COURIER_ORDER_MESSAGE}
             >
               Order on WhatsApp
             </WhatsAppButton>

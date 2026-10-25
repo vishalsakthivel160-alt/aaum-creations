@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import WhatsAppButton from './WhatsAppButton';
 import businessKnowledge from '../data/businessKnowledge.json';
+import { COURIER_ORDER_MESSAGE } from '../utils/orderConstants';
 
 export default function StoreShowcase({ onAskAI }) {
   const { business, products } = businessKnowledge;
@@ -114,7 +115,7 @@ export default function StoreShowcase({ onAskAI }) {
 
             <WhatsAppButton
               variant="default"
-              customMessage="Hello Aaum Creations! 🌿\nI would like to order authentic Shadow-Dried Soursop Leaves via direct Courier delivery.\n\n• Name: \n• Quantity (Packs): \n• Delivery Address: \n• Pincode: \n• Phone: \n\nPlease share payment details (UPI/GPay) to confirm my order!"
+              customMessage={COURIER_ORDER_MESSAGE}
               className="hero-whatsapp-btn"
             >
               Order on WhatsApp (Courier)
@@ -243,10 +244,7 @@ export default function StoreShowcase({ onAskAI }) {
                 </a>
 
                 <WhatsAppButton
-                  customMessage={
-                    soursopProduct.whatsappCourierOrder?.messageTemplate ||
-                    "Hello Aaum Creations! 🌿\nI would like to order authentic Shadow-Dried Soursop Leaves via direct Courier delivery.\n\n• Name: \n• Quantity (Packs): \n• Delivery Address: \n• Pincode: \n• Phone: \n\nPlease share payment details (UPI/GPay) to confirm my order!"
-                  }
+                  customMessage={COURIER_ORDER_MESSAGE}
                   className="btn-whatsapp-order"
                 >
                   Order on WhatsApp (Courier)

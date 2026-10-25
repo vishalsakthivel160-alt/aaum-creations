@@ -23,7 +23,9 @@ export default function WhatsAppButton({
     'Hello Aaum Creations, I would like to inquire about your products.';
 
   const messageToSend = customMessage || defaultMsg;
-  const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(messageToSend)}`;
+  // Convert any literal string "\n" into real newlines for proper WhatsApp formatting
+  const formattedMessage = String(messageToSend).replace(/\\n/g, '\n').trim();
+  const whatsappUrl = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(formattedMessage)}`;
 
   const buttonClasses = `whatsapp-btn variant-${variant} ${className}`.trim();
 
