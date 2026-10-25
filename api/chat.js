@@ -7,16 +7,64 @@ import path from 'path';
 const envLocalPath = path.resolve(process.cwd(), '.env.local');
 const envPath = path.resolve(process.cwd(), '.env');
 
-let isEnvInitialized = false;
+function getGeminiApiKey() {
+  let key = process.env.GEMINI_API_KEY;
+  if (key && typeof key === 'string' && key.trim() !== '' && !key.includes('your_gemini_api_key_here')) {
+    return key.trim();
+  }
+
+  // Direct file fallback: Read from .env.local on disk if environment variable was not passed
+  try {
+    const localEnvPath = path.resolve(process.cwd(), '.env.local');
+    if (fs.existsSync(localEnvPath)) {
+      const content = fs.readFileSync(localEnvPath, 'utf8');
+      const match = content.match(/^GEMINI_API_KEY\s*=\s*([^\r\n#]+)/m);
+      if (match && match[1]) {
+        const found = match[1].trim().replace(/^["']|["']$/g, '');
+        if (found && !found.includes('your_gemini_api_key_here')) {
+          process.env.GEMINI_API_KEY = found;
+          return found;
+        }
+      }
+    }
+  } catch (err) {
+    console.warn('Could not read .env.local directly:', err.message);
+  }
+
+  return null;
+}
+
+function getGeminiModel() {
+  let model = process.env.GEMINI_MODEL;
+  if (model && typeof model === 'string' && model.trim() !== '') {
+    return model.trim();
+  }
+
+  try {
+    const localEnvPath = path.resolve(process.cwd(), '.env.local');
+    if (fs.existsSync(localEnvPath)) {
+      const content = fs.readFileSync(localEnvPath, 'utf8');
+      const match = content.match(/^GEMINI_MODEL\s*=\s*([^\r\n#]+)/m);
+      if (match && match[1]) {
+        const found = match[1].trim().replace(/^["']|["']$/g, '');
+        if (found) {
+          process.env.GEMINI_MODEL = found;
+          return found;
+        }
+      }
+    }
+  } catch {}
+
+  return 'gemini-3-flash-preview';
+}
+
 function ensureEnvLoaded() {
-  if (isEnvInitialized) return;
   if (fs.existsSync(envLocalPath)) {
-    dotenv.config({ path: envLocalPath });
+    dotenv.config({ path: envLocalPath, override: true });
   }
   if (fs.existsSync(envPath)) {
     dotenv.config({ path: envPath });
   }
-  isEnvInitialized = true;
 }
 
 ensureEnvLoaded();
@@ -204,8 +252,8 @@ export default async function handler(req, res) {
 
   // 2. Validate GEMINI_API_KEY
   ensureEnvLoaded();
-  const apiKey = process.env.GEMINI_API_KEY;
-  if (!apiKey || apiKey.trim() === '' || apiKey.includes('your_gemini_api_key_here')) {
+  const apiKey = getGeminiApiKey();
+  if (!apiKey) {
     return res.status(503).json({
       error: 'The AI service is awaiting configuration: GEMINI_API_KEY is not set in server environment variables.',
       code: 'MISSING_API_KEY',
@@ -258,7 +306,7 @@ export default async function handler(req, res) {
   // 4. Construct System Instructions & GoogleGenAI Client
   const knowledge = getBusinessKnowledge();
   const instructions = buildSystemInstructions(knowledge);
-  const modelName = process.env.GEMINI_MODEL || 'gemini-3-flash-preview';
+  const modelName = getGeminiModel();
 
   const ai = new GoogleGenAI({ apiKey });
 
