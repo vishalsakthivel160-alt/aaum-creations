@@ -1,0 +1,107 @@
+{
+  "business": {
+    "name": "Aaum Creations",
+    "tagline": "Pure Botanicals & Authentic Soursop Leaves",
+    "description": "Aaum Creations specializes in 100% authentic, handpicked, and shadow-dried Soursop Leaves (Graviola / முள்சீத்தா இலைகள்) crafted with care for traditional herbal infusions.",
+    "contact": {
+      "whatsappNumber": "+917094556516",
+      "displayPhone": "+91 70945 56516",
+      "whatsappDefaultMessage": "Hello Aaum Creations, I would like to inquire about your Soursop Leaves.",
+      "email": "support@aaumcreations.example.com",
+      "supportHours": "Monday – Saturday: 9:00 AM – 7:00 PM IST"
+    },
+    "supportedLanguages": [
+      "English",
+      "Tamil (தமிழ்)"
+    ]
+  },
+  "strictGuardrails": [
+    "Do NOT make unsupported medical, disease-treatment, or health-benefit claims about Soursop Leaves (e.g., never claim it cures cancer, treats tumors, cures diabetes, or substitutes for medical treatments). Treat neutrally as traditional dried leaves for herbal tea / infusions.",
+    "Do NOT invent prices, stock status, delivery dates, shipping costs, discounts, ingredients, lab certifications, or return policies. If any details are not confirmed in this knowledge base, politely state that you do not have live stock/price information and direct the customer to the owner via WhatsApp.",
+    "We provide two official order options: (1) Buy Now on Flipkart (https://dl.flipkart.com/s/dL!4cJuuuN) and (2) Direct Courier Order on WhatsApp (+91 70945 56516) where customers provide their delivery address and payment for direct doorstep courier shipping across India. Clearly guide customers to both options whenever they ask how to purchase or order.",
+    "Support both English and Tamil naturally. If a user asks in Tamil or Tanglish, greet and respond in Tamil or bilingual Tamil/English with cultural politeness (e.g. 'வணக்கம்!').",
+    "Focus exclusively on Soursop Leaves (Graviola / முள்சீத்தா இலைகள்). We do not sell other products."
+  ],
+  "products": [
+    {
+      "id": "soursop-leaves",
+      "name": "Pure Shadow-Dried Soursop Leaves (Graviola)",
+      "tamilName": "முள்சீத்தா இலைகள் (Mulsitha Ilaigal)",
+      "category": "Natural Botanicals & Herbal Infusions",
+      "images": [
+        {
+          "url": "/assets/soursop-box.jpg",
+          "title": "Aaum Creations Official Packaging Box",
+          "alt": "Aaum Creations Soursop Leaves official box packaging"
+        },
+        {
+          "url": "/assets/soursop-dried.jpg",
+          "title": "Natural Shadow Dried Leaves",
+          "alt": "Carefully shadow dried Soursop leaves maintaining natural botanical integrity"
+        },
+        {
+          "url": "/assets/soursop-fresh-leaves.jpg",
+          "title": "Fresh Green Leaves on Tree",
+          "alt": "Fresh green organic Soursop leaves grown in natural sunlight"
+        },
+        {
+          "url": "/assets/soursop-fruit.jpg",
+          "title": "Soursop Fruit on Branch",
+          "alt": "Natural Soursop fruit growing on healthy tree branch"
+        }
+      ],
+      "summary": "100% authentic, pesticide-free, handpicked Soursop (Annona muricata) leaves, gently shadow-dried to preserve natural plant essence.",
+      "description": "Aaum Creations brings you premium dried Soursop leaves (commonly known as Graviola, Guyabano, or முள்சீத்தா இலைகள் in Tamil). Sourced with reverence from healthy trees, carefully washed with fresh water, and dried in clean shade to retain their rich botanical color, natural aroma, and leaf integrity.",
+      "processingMethod": "Shadow-dried (நிழலில் உலர்த்தப்பட்டது) to prevent direct UV sun degradation and retain chlorophyll and natural qualities.",
+      "packaging": "Packed in the official Aaum Creations protective box to prevent leaf breakage and maintain freshness during transit.",
+      "verifiedPurchaseLink": {
+        "platform": "Flipkart",
+        "url": "https://dl.flipkart.com/s/dL!4cJuuuN",
+        "label": "Buy on Flipkart"
+      },
+      "whatsappCourierOrder": {
+        "label": "Order Now on WhatsApp (Courier Delivery)",
+        "phone": "+91 70945 56516",
+        "messageTemplate": "Hello Aaum Creations! 🌿\nI would like to order authentic Shadow-Dried Soursop Leaves via direct Courier delivery.\n\n• Name: \n• Quantity (Packs): \n• Delivery Address: \n• Pincode: \n• Phone: \n\nPlease share payment details (UPI/GPay) to confirm my order!"
+      },
+      "usageInstructions": "Boil 3 to 5 dried leaves in 2-3 cups of fresh drinking water for 10-15 minutes on medium-low flame. Strain the infusion and enjoy warm. You may add a drop of lemon or pure honey according to personal preference.",
+      "importantDisclaimer": "Sold strictly as a traditional botanical herbal tea infusion. Not evaluated to diagnose, treat, cure, or prevent any illness or medical disease. Pregnant or nursing women and individuals with health conditions should consult their healthcare provider before using herbal teas.",
+      "quickFaq": [
+        {
+          "q": "Where and how can I order Aaum Creations Soursop Leaves?",
+          "a": "You have two easy ways to order: (1) Buy online on Flipkart (https://dl.flipkart.com/s/dL!4cJuuuN), or (2) Order directly on WhatsApp (+91 70945 56516) for direct courier delivery to your doorstep."
+        },
+        {
+          "q": "Why are the leaves shadow-dried?",
+          "a": "Shadow drying is a traditional Ayurvedic method where leaves dry under gentle ambient air instead of harsh direct sunlight, preserving the natural color, nutrients, and fragrance."
+        },
+        {
+          "q": "Can Soursop cure medical diseases or cancer?",
+          "a": "No medical claims are made. Our product is sold solely as a traditional herbal leaf for tea infusions. Please consult a qualified medical professional for health issues."
+        }
+      ]
+    }
+  ],
+  "frequentlyAskedQuestions": [
+    {
+      "question": "How do I order Soursop Leaves?",
+      "answer": "You can order in two easy ways:\n1. Buy Now on Flipkart: Order securely through our official Flipkart listing (https://dl.flipkart.com/s/dL!4cJuuuN).\n2. Order Now on WhatsApp: Message us on WhatsApp (+91 70945 56516) with your delivery address and required packs. We provide UPI payment details and courier the package straight to your doorstep across India!"
+    },
+    {
+      "question": "Can I order directly on WhatsApp for courier delivery?",
+      "answer": "Yes! We accept direct orders via WhatsApp at +91 70945 56516. Just message us your name, number of packs, and delivery address. We will confirm your order and courier it directly to you."
+    },
+    {
+      "question": "What is the Tamil name for Soursop?",
+      "answer": "In Tamil, Soursop is known as 'முள்சீத்தா' (Mulsitha) or 'லட்சுமண பழம்' (Lakshman Phal)."
+    },
+    {
+      "question": "Do you deliver across India?",
+      "answer": "Yes! Both through our Flipkart listing and via direct courier orders on WhatsApp (+91 70945 56516), we deliver to all major pin codes across India."
+    },
+    {
+      "question": "Can I get a bulk discount on WhatsApp?",
+      "answer": "Yes! For wholesale or bulk courier orders, click the WhatsApp button (+91 70945 56516) to chat directly with the business owner."
+    }
+  ]
+}
